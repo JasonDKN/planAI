@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Our Wedding Planner</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<header id="heroSection" class="hero">
+  <div class="hero-inner">
+    <p class="hero-kicker">The Wedding Of</p>
+    <h1 id="partnerNames">Partner One &amp; Partner Two</h1>
+    <p id="tagline" class="hero-tagline">are getting married!</p>
+    <p id="weddingDateLabel" class="wedding-date"></p>
+    <div id="countdown" class="countdown">Loading countdown&hellip;</div>
+    <p id="hashtag" class="hashtag"></p>
+  </div>
+</header>
+
+<main>
+
+  <section id="glanceSection" class="panel">
+    <h2>At a Glance</h2>
+    <div id="customVariables" class="stats"></div>
+  </section>
+
+  <section id="mediaSection" class="panel">
+    <h2>Photo &amp; Inspiration Gallery</h2>
+    <div id="mediaGallery" class="gallery"></div>
+  </section>
+
+  <section id="timelineSection" class="panel">
+    <div class="timeline-header">
+      <h2>Wedding Planning Timeline</h2>
+      <div class="progress-wrap">
+        <div class="progress-track"><div id="progressBar" class="progress-fill"></div></div>
+        <span id="progressLabel" class="progress-label"></span>
+      </div>
+    </div>
+
+    <div class="toolbar">
+      <div id="categoryFilters" class="filters"></div>
+      <div class="toolbar-actions">
+        <button id="printBtn" class="btn-secondary" type="button">Print / Save PDF</button>
+        <button id="resetProgressBtn" class="btn-secondary" type="button">Reset checkmarks</button>
+      </div>
+    </div>
+
+    <div id="timelineList" class="timeline-list"></div>
+
+    <details class="add-task-panel">
+      <summary>+ Add your own task (saved privately in this browser)</summary>
+      <form id="addTaskForm" class="add-task-form">
+        <label>Date
+          <input type="date" id="newDate" required />
+        </label>
+        <label>Category
+          <select id="newCategory"></select>
+        </label>
+        <label>Title
+          <input type="text" id="newTitle" placeholder="e.g. Call Aunt Carol about centerpieces" required />
+        </label>
+        <label>Notes
+          <textarea id="newNotes" placeholder="Optional details"></textarea>
+        </label>
+        <button type="submit" class="btn-primary">Add task</button>
+      </form>
+      <p class="hint">Personal tasks and checkmarks are saved in your browser only (not shared with other visitors, and not saved to GitHub). To add something permanent for everyone, edit <code>src/config.ts</code> and push it.</p>
+    </details>
+  </section>
+
+</main>
+
+<footer>
+  <p>Made with love. Edit <code>src/config.ts</code> to make this site your own &mdash; see <code>README.md</code> for how to publish changes.</p>
+</footer>
+
+<script src="config.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

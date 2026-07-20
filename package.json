@@ -1,0 +1,12 @@
+{
+  "name": "wedding-planner-site",
+  "version": "1.0.0",
+  "private": true,
+  "description": "A simple, fully customizable wedding planning website (TypeScript + HTML/CSS).",
+  "scripts": {
+    "build": "tsc"
+  },
+  "devDependencies": {
+    "typescript": "^5.5.4"
+  }
+}

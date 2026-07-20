@@ -1,0 +1,149 @@
+/* ============================================================================
+   WEDDING PLANNER — STYLES  (style.css)
+   Colors, fonts, spacing all live here. Look for a color you want to change
+   and edit the hex code (like #b76e79) — that's the easiest customization.
+   ============================================================================ */
+
+:root {
+  --color-bg: #fbf7f2;
+  --color-panel: #ffffff;
+  --color-text: #2b2523;
+  --color-muted: #7a716c;
+  --color-accent: #b76e79;      /* main "blush rose" accent color */
+  --color-accent-dark: #8f4b56;
+  --color-border: #e7ded6;
+  --font-heading: Georgia, 'Times New Roman', serif;
+  --font-body: 'Helvetica Neue', Arial, sans-serif;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  color: var(--color-text);
+  background: var(--color-bg);
+  line-height: 1.5;
+}
+
+h1, h2 { font-family: var(--font-heading); font-weight: normal; }
+
+/* ---------- HERO ---------- */
+.hero {
+  background: linear-gradient(rgba(30,20,20,0.35), rgba(30,20,20,0.35)), var(--color-accent);
+  background-size: cover;
+  background-position: center;
+  color: #fff;
+  text-align: center;
+  padding: 80px 20px 60px;
+}
+.hero-inner { max-width: 700px; margin: 0 auto; }
+.hero-kicker { letter-spacing: 3px; text-transform: uppercase; font-size: 0.8rem; opacity: 0.85; margin: 0 0 10px; }
+.hero h1 { font-size: 3rem; margin: 0 0 10px; }
+.hero-tagline { font-size: 1.2rem; margin: 0 0 16px; opacity: 0.95; }
+.wedding-date { font-size: 1rem; opacity: 0.9; margin: 0 0 20px; }
+.countdown {
+  display: inline-block;
+  font-size: 1.6rem;
+  font-weight: bold;
+  background: rgba(255,255,255,0.15);
+  padding: 12px 24px;
+  border-radius: 10px;
+  margin-bottom: 16px;
+  letter-spacing: 1px;
+}
+.hashtag { font-size: 0.95rem; opacity: 0.85; }
+
+/* ---------- LAYOUT ---------- */
+main { max-width: 900px; margin: 0 auto; padding: 30px 20px 80px; }
+.panel {
+  background: var(--color-panel);
+  border: 1px solid var(--color-border);
+  border-radius: 14px;
+  padding: 28px;
+  margin-bottom: 28px;
+}
+.panel h2 { margin-top: 0; color: var(--color-accent-dark); }
+
+/* ---------- AT A GLANCE ---------- */
+.stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; }
+.stat-row {
+  display: flex; justify-content: space-between; gap: 10px;
+  padding: 10px 14px; background: var(--color-bg);
+  border-radius: 8px; border: 1px solid var(--color-border);
+}
+.stat-label { color: var(--color-muted); font-size: 0.9rem; }
+.stat-value { font-weight: bold; text-align: right; }
+
+/* ---------- GALLERY ---------- */
+.gallery { display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 14px; }
+.gallery-item { margin: 0; }
+.gallery-item img { width: 100%; height: 140px; object-fit: cover; border-radius: 10px; border: 1px solid var(--color-border); }
+.gallery-item figcaption { font-size: 0.8rem; color: var(--color-muted); margin-top: 4px; text-align: center; }
+
+/* ---------- TIMELINE HEADER / PROGRESS ---------- */
+.timeline-header { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 14px; }
+.progress-wrap { flex: 1; min-width: 220px; display: flex; align-items: center; gap: 10px; }
+.progress-track { flex: 1; height: 10px; background: var(--color-bg); border-radius: 6px; overflow: hidden; border: 1px solid var(--color-border); }
+.progress-fill { height: 100%; width: 0%; background: var(--color-accent); transition: width 0.3s ease; }
+.progress-label { font-size: 0.85rem; color: var(--color-muted); white-space: nowrap; }
+
+/* ---------- TOOLBAR / FILTERS ---------- */
+.toolbar { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; margin: 18px 0; }
+.filters { display: flex; flex-wrap: wrap; gap: 8px; }
+.filter-btn {
+  border: 1px solid var(--color-border);
+  background: #fff;
+  padding: 6px 14px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 0.85rem;
+}
+.filter-btn.active { color: #fff; border-color: var(--color-accent); background: var(--color-accent); }
+.toolbar-actions { display: flex; gap: 8px; }
+.btn-secondary, .btn-primary {
+  border-radius: 8px; padding: 8px 16px; font-size: 0.85rem; cursor: pointer; border: 1px solid var(--color-border);
+}
+.btn-secondary { background: #fff; }
+.btn-primary { background: var(--color-accent); color: #fff; border-color: var(--color-accent); }
+
+/* ---------- TIMELINE LIST ---------- */
+.timeline-list { display: flex; flex-direction: column; gap: 10px; }
+.task-item {
+  display: flex; gap: 12px; align-items: flex-start;
+  padding: 14px; border: 1px solid var(--color-border); border-radius: 10px; background: var(--color-bg);
+}
+.task-item.done { opacity: 0.55; }
+.task-item.done .task-title { text-decoration: line-through; }
+.task-checkbox { margin-top: 4px; width: 18px; height: 18px; cursor: pointer; }
+.task-body { flex: 1; }
+.task-top { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
+.task-date { font-size: 0.8rem; color: var(--color-muted); font-weight: bold; }
+.task-category { font-size: 0.72rem; color: #fff; padding: 2px 8px; border-radius: 12px; }
+.task-personal-badge { font-size: 0.7rem; color: var(--color-accent-dark); border: 1px solid var(--color-accent); padding: 1px 8px; border-radius: 10px; }
+.task-title { font-weight: bold; margin-top: 4px; }
+.task-notes { font-size: 0.9rem; color: var(--color-muted); margin-top: 4px; }
+.task-media { max-width: 100%; margin-top: 8px; border-radius: 8px; max-height: 180px; }
+.task-links { font-size: 0.85rem; margin-top: 4px; }
+.delete-btn { border: none; background: none; color: var(--color-muted); font-size: 1rem; cursor: pointer; margin-left: auto; }
+.empty-msg { color: var(--color-muted); font-style: italic; }
+
+/* ---------- ADD TASK FORM ---------- */
+.add-task-panel { margin-top: 24px; border-top: 1px dashed var(--color-border); padding-top: 16px; }
+.add-task-panel summary { cursor: pointer; font-weight: bold; color: var(--color-accent-dark); }
+.add-task-form { display: grid; gap: 12px; margin-top: 14px; max-width: 460px; }
+.add-task-form label { display: flex; flex-direction: column; font-size: 0.85rem; color: var(--color-muted); gap: 4px; }
+.add-task-form input, .add-task-form select, .add-task-form textarea {
+  font-family: inherit; padding: 8px 10px; border-radius: 6px; border: 1px solid var(--color-border);
+}
+.hint { font-size: 0.8rem; color: var(--color-muted); margin-top: 10px; }
+
+/* ---------- FOOTER ---------- */
+footer { text-align: center; color: var(--color-muted); font-size: 0.85rem; padding: 20px; }
+
+/* ---------- PRINT ---------- */
+@media print {
+  .hero, .toolbar, .add-task-panel, footer, .mediaSection, #mediaSection { display: none !important; }
+  .task-checkbox { display: none; }
+  .panel { border: none; }
+}
